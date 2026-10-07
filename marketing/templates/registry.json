@@ -1,0 +1,130 @@
+{
+  "version": "1.0",
+  "canvas": {
+    "width": 1080,
+    "height": 1350,
+    "ratio": "4:5"
+  },
+  "brand": {
+    "cream": "#F7F2E8",
+    "deepPlum": "#3A102C",
+    "berryPlum": "#5A123F",
+    "botanicalGold": "#B4934E"
+  },
+  "templates": [
+    {
+      "id": "T01",
+      "slug": "ingredient-spotlight",
+      "name": "Ingredient Spotlight",
+      "pillars": [
+        "ingredient spotlight",
+        "product education"
+      ],
+      "required": [
+        "headline",
+        "subheadline",
+        "feature1",
+        "feature2",
+        "feature3",
+        "heroImage"
+      ],
+      "cta": "Discover our ingredients"
+    },
+    {
+      "id": "T02",
+      "slug": "educational-comparison",
+      "name": "Educational Comparison",
+      "pillars": [
+        "education",
+        "process comparison",
+        "technical"
+      ],
+      "required": [
+        "headline",
+        "optionA",
+        "optionB",
+        "point1",
+        "point2",
+        "point3"
+      ],
+      "cta": "Request specifications"
+    },
+    {
+      "id": "T03",
+      "slug": "application-spotlight",
+      "name": "Application Spotlight",
+      "pillars": [
+        "applications",
+        "formulation",
+        "finished products"
+      ],
+      "required": [
+        "headline",
+        "subheadline",
+        "use1",
+        "use2",
+        "use3",
+        "applicationImage"
+      ],
+      "cta": "Discuss your formulation"
+    },
+    {
+      "id": "T04",
+      "slug": "origin-sourcing",
+      "name": "Origin & Sourcing",
+      "pillars": [
+        "origin",
+        "sourcing",
+        "provenance"
+      ],
+      "required": [
+        "headline",
+        "subheadline",
+        "origin",
+        "quality",
+        "supply",
+        "originImage"
+      ],
+      "cta": "Discover our sourcing"
+    },
+    {
+      "id": "T05",
+      "slug": "private-label",
+      "name": "Private Label",
+      "pillars": [
+        "private label",
+        "packaging",
+        "commercial"
+      ],
+      "required": [
+        "headline",
+        "subheadline",
+        "format",
+        "branding",
+        "supply",
+        "packagingImage"
+      ],
+      "cta": "Ask about private label"
+    },
+    {
+      "id": "T06",
+      "slug": "brand-message",
+      "name": "Brand Message",
+      "pillars": [
+        "institutional",
+        "positioning",
+        "announcement",
+        "cta"
+      ],
+      "required": [
+        "headline",
+        "subheadline",
+        "value1",
+        "value2",
+        "value3",
+        "cta"
+      ],
+      "cta": "Talk to Biohacker Foods"
+    }
+  ]
+}
