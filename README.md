@@ -10,7 +10,7 @@ Sistema focado exclusivamente na operação de Instagram da Biohacker Foods.
 - prepara legendas em inglês
 - valida o lote semanal
 - renderiza os slides em PNG
-- agenda via Buffer quando configurado
+- agenda/publica no Instagram via Buffer quando configurado
 - registra IDs reais de publicação e arquiva o lote no GitHub
 
 ## Estrutura
@@ -24,11 +24,10 @@ Sistema focado exclusivamente na operação de Instagram da Biohacker Foods.
 - `saidas/` — registros de agendamento
 - `.claude/skills/` — skills do fluxo de Instagram
 
-## Skills principais
+## Skills
 
 - `/biohacker-weekly-content`
 - `/carrossel`
-- `/publicar-tema`
 - `/agendar-buffer`
 - `/aprovar-post`
 - `/abrir`
@@ -54,13 +53,15 @@ Adicionar a logo oficial em:
 
 `identidade/assets/logo-biohacker-foods.png`
 
-E configurar localmente o `.env`:
+Configurar localmente o `.env`:
 
 ```env
 BUFFER_ACCESS_TOKEN=
 BUFFER_ORGANIZATION_ID=
 BUFFER_INSTAGRAM_CHANNEL_ID=
 ```
+
+`OPENAI_API_KEY` é opcional e só é necessária se o fluxo local usar geração de imagens por API.
 
 Nunca versionar o `.env`.
 
