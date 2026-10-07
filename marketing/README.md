@@ -1,30 +1,44 @@
-# Marketing
+# Marketing — Instagram
 
 ## Objetivo
 
-Fazer a Biohacker Foods parecer o que ela está construindo: uma parceira internacional de ingredientes e supply, não apenas uma página de produtos.
+Construir uma presença visual premium e internacional para a Biohacker Foods no Instagram.
 
 ## Pilares editoriais
 
-1. Product education
-2. Applications
-3. Origin and sourcing
-4. Quality and documentation
-5. B2B supply capabilities
-6. Market / ingredient insights
-7. Brand and product launches
+1. Ingredient Spotlight
+2. Product Education
+3. Applications
+4. Origin & Sourcing
+5. Quality / Process Education
+6. Private Label
+7. Brand Positioning
+
+## Sistema visual
+
+Toda publicação deve usar uma das seis famílias registradas em `marketing/templates/`.
+
+- T01 Ingredient Spotlight
+- T02 Educational Comparison
+- T03 Application Spotlight
+- T04 Origin & Sourcing
+- T05 Private Label
+- T06 Brand Message
+
+O `templateId` deve ser salvo no planejamento e no `conteudo.json`.
 
 ## Idioma
 
-Inglês é o idioma padrão para posicionamento internacional, salvo campanha deliberadamente regional.
+Inglês é o padrão.
 
 ## CTA
 
-Priorizar CTAs B2B:
-- request a sample
-- request specifications
-- discuss your formulation
-- ask for wholesale availability
-- talk to our sourcing team
+Priorizar:
+- Discover our ingredients
+- Request specifications
+- Discuss your formulation
+- Ask about wholesale availability
+- Ask about private label
+- Talk to Biohacker Foods
 
 Evitar CTAs genéricos de influencer.
