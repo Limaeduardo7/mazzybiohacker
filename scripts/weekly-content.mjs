@@ -68,6 +68,24 @@ function escapeHtml(value) {
     .replaceAll("'", '&#039;');
 }
 
+
+const TEMPLATE_IDS = new Set(['T01','T02','T03','T04','T05','T06']);
+
+function inferTemplateId(item) {
+  const subject = `${item.category || ''} ${item.theme || ''} ${item.hook || ''}`.toLowerCase();
+  if (/private\s*label|packag|brand[- ]ready|custom format/.test(subject)) return 'T05';
+  if (/origin|sourc|brazil|amazon|provenance|traceab/.test(subject)) return 'T04';
+  if (/application|formulat|smoothie|bowl|beverage|recipe|use case/.test(subject)) return 'T03';
+  if (/\bvs\b|versus|compare|comparison|freeze[- ]?dried|spray[- ]?dried|difference/.test(subject)) return 'T02';
+  if (/brand|position|announcement|launch|capabilit|institutional/.test(subject)) return 'T06';
+  return 'T01';
+}
+
+function resolveTemplateId(item) {
+  const explicit = String(item.templateId || '').toUpperCase();
+  return TEMPLATE_IDS.has(explicit) ? explicit : inferTemplateId(item);
+}
+
 function parseArgs(argv) {
   const args = { _: [] };
   for (let i = 0; i < argv.length; i += 1) {
@@ -105,6 +123,7 @@ function validatePlan(plan) {
   for (const [index, item] of (plan.carousels || []).entries()) {
     const label = `carrossel ${index + 1}`;
     if (!item.theme) errors.push(`${label}: theme ausente.`);
+    if (item.templateId && !TEMPLATE_IDS.has(String(item.templateId).toUpperCase())) errors.push(`${label}: templateId inválido. Use T01, T02, T03, T04, T05 ou T06.`);
     if (!item.hook || item.hook.length > 90) errors.push(`${label}: hook ausente ou acima de 90 caracteres.`);
     if (!item.caption || item.caption.length < 120) errors.push(`${label}: caption deve ter ao menos 120 caracteres.`);
     if (!Array.isArray(item.slides) || item.slides.length < 5 || item.slides.length > 9) {
@@ -125,6 +144,7 @@ function validatePlan(plan) {
 
 function carouselHtml(item, backgroundDir = null) {
   const fontFaces = '';
+  const templateId = resolveTemplateId(item);
   const subject = `${item.category || ''} ${item.theme || ''}`.toLowerCase();
   const disclaimer = item.disclaimer || (
     subject.includes('organic') || subject.includes('certif')
@@ -147,7 +167,7 @@ function carouselHtml(item, backgroundDir = null) {
       ? ` style="background-image:url('${pathToFileURL(backgroundFile).href}')"`
       : '';
     return `
-      <section class="slide layout-${index % 3} ${isFinal ? 'final' : ''}">
+      <section class="slide template-${templateId} layout-${index % 3} ${isFinal ? 'final' : ''}">
         <div class="photo"${backgroundStyle}></div>
         <main>
           <div class="kicker">${escapeHtml(kicker)}</div>
@@ -202,6 +222,33 @@ function carouselHtml(item, backgroundDir = null) {
   .footer-cta{font-size:25px;font-weight:750;white-space:nowrap;letter-spacing:-.02em}
   .arrow{margin-left:auto;width:66px;height:66px;border:2px solid #C3A45D;border-radius:50%;color:#C3A45D;display:flex;align-items:center;justify-content:center;font-size:43px;font-weight:300;line-height:1;padding-bottom:8px}
   .disclaimer{position:absolute;left:54px;right:54px;bottom:18px;font-size:13px;line-height:1.25;font-weight:380;color:#F7F3EA;opacity:.92}
+
+  /* Canonical Biohacker Instagram templates */
+  .template-T01 .photo{left:46%;top:330px;bottom:220px;border-top-left-radius:220px}
+  .template-T01 h1{font-family:Georgia,'Times New Roman',serif;color:#3A102C}
+
+  .template-T02 .photo{left:54px;right:54px;top:470px;bottom:420px;border-radius:24px}
+  .template-T02 .body-panel{top:835px;width:455px}
+  .template-T02 h1{font-family:Georgia,'Times New Roman',serif;max-width:900px}
+  .template-T02 .counter{top:430px;color:#3A102C;text-shadow:none}
+
+  .template-T03 .photo{left:51%;top:300px;bottom:220px;border-top-left-radius:180px}
+  .template-T03 .body-panel{top:500px;width:390px}
+  .template-T03 h1{font-family:Georgia,'Times New Roman',serif}
+
+  .template-T04 .photo{left:36%;top:250px;bottom:220px;background-position:center}
+  .template-T04 .photo:after{background:linear-gradient(90deg,rgba(247,242,232,.96) 0%,rgba(247,242,232,.66) 38%,rgba(247,242,232,.08) 72%)}
+  .template-T04 h1{font-family:Georgia,'Times New Roman',serif;max-width:650px}
+
+  .template-T05 .photo{left:48%;top:250px;bottom:220px;border-top-left-radius:34px}
+  .template-T05 .body-panel{top:505px;width:390px}
+  .template-T05 h1{font-family:Georgia,'Times New Roman',serif}
+
+  .template-T06 .photo{left:54%;top:420px;bottom:220px;border-top-left-radius:220px}
+  .template-T06 h1{font-family:Georgia,'Times New Roman',serif;color:#B4934E}
+  .template-T06 .body-panel{top:500px;width:440px}
+  .template-T06 .rule{width:110px}
+
   .final h1{max-width:900px}
   .final .photo{background-position:center}
 </style></head><body>${slides}</body></html>`;
@@ -228,7 +275,7 @@ async function renderPlan(inputFile, plan) {
       const html = carouselHtml(item, path.join(postDir, 'fundos'));
       fs.writeFileSync(path.join(postDir, 'carrossel.html'), html, 'utf8');
       fs.writeFileSync(path.join(postDir, 'legenda.md'), `${item.caption.trim()}\n`, 'utf8');
-      writeJsonAtomic(path.join(postDir, 'conteudo.json'), item);
+      writeJsonAtomic(path.join(postDir, 'conteudo.json'), { ...item, templateId: resolveTemplateId(item) });
 
       const page = await browser.newPage({ viewport: { width: 1080, height: 1350 }, deviceScaleFactor: 1 });
       await page.goto(pathToFileURL(path.join(postDir, 'carrossel.html')).href, { waitUntil: 'load' });
