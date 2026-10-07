@@ -1,11 +1,11 @@
-# Biohacker Foods OS
+# Biohacker Foods Instagram OS
 
-Before acting, read `CLAUDE.md`, the four files in `_memoria/`, and the relevant domain README or skill.
+Este repositório é exclusivo para Instagram.
 
-Never publish, commit or expose confidential supplier pricing, private customer data, tokens, contracts or internal margins. This repository is public.
+Antes de produzir conteúdo, leia `_memoria/empresa.md`, `_memoria/estrategia.md`, `_memoria/preferencias.md` e `identidade/design-guide.md`.
 
-For commercial work, verify the latest operational context before drafting a reply. For sourcing work, separate confirmed supplier evidence from assumptions. For pricing, never convert supplier cost directly into customer-facing pricing without the approved commercial pricing logic.
+Para conteúdo semanal, siga `.claude/skills/biohacker-weekly-content/SKILL.md`.
 
-For visual or social content, follow `identidade/design-guide.md`.
+Para renderização e agendamento, use `scripts/weekly-content.mjs`. Nunca afirme publicação/agendamento sem ID real retornado pelo Buffer.
 
-When a repeated workflow becomes stable, document it as a skill under `.claude/skills/<name>/SKILL.md`.
+Não use este workspace para CRM, fornecedores, pricing, RFQs ou operação comercial.
