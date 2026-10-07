@@ -1,97 +1,41 @@
-# Biohacker Foods OS
+# Biohacker Foods — Instagram OS
 
-> Operating system for Biohacker Foods inside Claude Code / Codex.
+Sistema focado exclusivamente na operação de Instagram da Biohacker Foods.
 
-This repository is the working operating layer for Biohacker Foods: company context, brand identity, commercial workflows, supplier workflows, product knowledge, document standards, pricing governance, marketing systems and reusable AI skills.
+## O que este repositório faz
 
-## Core idea
+- planeja a semana de conteúdo
+- gera carrosséis 1080×1350
+- aplica a identidade visual da Biohacker
+- prepara legendas em inglês
+- valida o lote semanal
+- renderiza os slides em PNG
+- agenda via Buffer quando configurado
+- registra IDs reais de publicação e arquiva o lote no GitHub
 
-The AI should not act as a generic assistant. It should work from Biohacker Foods' operating context, respect commercial rules, preserve source-of-truth boundaries and produce outputs that can be reviewed, versioned and improved.
+## Estrutura
 
-The system follows a closed-loop model:
+- `_memoria/` — contexto editorial e posicionamento
+- `identidade/` — design guide e assets
+- `marketing/` — conteúdo gerado
+- `planejamento/` — planos semanais em JSON
+- `public/` — mídia pública usada no agendamento
+- `scripts/` — renderização, validação e Buffer
+- `saidas/` — registros de agendamento
+- `.claude/skills/` — skills do fluxo de Instagram
 
-**context → decision → execution → capture → review → update**
+## Skills principais
 
-## Main folders
-
-- `_memoria/` — canonical operating context for the AI workspace
-- `identidade/` — brand and visual system
-- `commercial/` — lead, account, RFQ, sample and follow-up workflows
-- `suppliers/` — supplier qualification and sourcing workflows
-- `products/` — product taxonomy and specification model
-- `documents/` — technical and compliance document standards
-- `pricing/` — commercial pricing governance
-- `marketing/` — content and acquisition system
-- `skills/` — reusable AI workflows
-- `scripts/` — automation and integration helpers
-- `saidas/` — generated deliverables
-- `dados/` — local input data for analysis
-
-## Important source-of-truth rule
-
-This GitHub repository is the AI execution workspace.
-
-Operational records that change frequently — live leads, supplier records, active opportunities, approvals, tasks and current commercial status — should remain in the systems designated as canonical by Biohacker Foods. The AI must not treat stale repository snapshots as more authoritative than the current operational source.
-
-## Public-repository warning
-
-This repository is currently public.
-
-Do **not** commit:
-- API keys or tokens
-- customer personal data
-- confidential supplier quotations
-- internal margin tables
-- private pricing matrices
-- contracts or restricted certificates
-- private commercial correspondence
-
-Use environment variables and private operational systems for sensitive data.
-
-## Start a session
-
-Before any meaningful task, the AI should read:
-
-1. `CLAUDE.md`
-2. `_memoria/empresa.md`
-3. `_memoria/estrategia.md`
-4. `_memoria/preferencias.md`
-5. the relevant domain README or skill
-
-Then execute the task and capture durable improvements back into the appropriate workspace file.
-
-## Skills
-
-Core:
-- `/abrir`
-- `/salvar`
-- `/atualizar`
-- `/mapear-rotinas`
-
-Biohacker-specific:
-- `/qualificar-lead`
-- `/rfq-fornecedor`
-- `/comparar-fornecedores`
-- `/responder-lead`
-- `/pricing`
-- `/sample-workflow`
 - `/biohacker-weekly-content`
-
-Marketing / MazyOS:
 - `/carrossel`
 - `/publicar-tema`
 - `/agendar-buffer`
 - `/aprovar-post`
-- `/seo`
-- `/anuncio-google`
-- `/relatorio-ads`
-- `/analisar-dados`
-- `/email-profissional`
-- `/novo-projeto`
+- `/abrir`
+- `/salvar`
+- `/atualizar`
 
-## Weekly content pipeline
-
-The repository includes the adapted Node/Playwright pipeline:
+## Pipeline semanal
 
 ```bash
 npm install
@@ -104,6 +48,26 @@ npm run weekly:archive -- --input planejamento/semana-YYYY-MM-DD.json
 npm run buffer:discover
 ```
 
-Before enabling publishing, add the approved Biohacker logo to `identidade/assets/logo-biohacker-foods.png` and configure the private `.env` locally.
+## Antes de publicar
 
-The repository is intentionally modular: new routines should become skills when they are repeated often enough to deserve a documented workflow.
+Adicionar a logo oficial em:
+
+`identidade/assets/logo-biohacker-foods.png`
+
+E configurar localmente o `.env`:
+
+```env
+BUFFER_ACCESS_TOKEN=
+BUFFER_ORGANIZATION_ID=
+BUFFER_INSTAGRAM_CHANNEL_ID=
+```
+
+Nunca versionar o `.env`.
+
+## Direção editorial
+
+O Instagram deve posicionar a Biohacker Foods como uma marca premium de superfoods e ingredientes de frutas, com estética sofisticada e apelo internacional.
+
+Idioma padrão: inglês.
+
+Evitar conteúdo genérico de academia, claims médicos e visual de suplemento fitness.
