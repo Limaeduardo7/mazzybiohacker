@@ -1,31 +1,31 @@
-# Estratégia — Biohacker Foods
+# Estratégia de Instagram
 
-## Norte
+## Objetivo
 
-Construir uma ingredient house / supply partner internacional com forte capacidade de encontrar, qualificar, documentar e entregar ingredientes premium do Brasil e América Latina.
+Construir autoridade visual e reconhecimento de marca para Biohacker Foods.
 
-## Prioridades
+## Pilares
 
-1. Fortalecer o ICP B2B de ingredient houses, importadores, distribuidores, fabricantes e marcas com múltiplos SKUs.
-2. Aumentar a velocidade entre demanda recebida e supplier match qualificado.
-3. Transformar documentação técnica em vantagem comercial.
-4. Construir presença de marca internacional consistente.
-5. Padronizar processos repetitivos em skills e automações.
-6. Preservar margem e governança comercial sem expor custo de fornecedor.
+1. Product education
+2. Ingredient spotlight
+3. Applications
+4. Origin and sourcing
+5. Quality
+6. Brand storytelling
+7. B2B credibility
 
-## Princípio de crescimento
+## Direção
 
-Preferir relações de supply recorrentes e multi-SKU a negociações pontuais de baixo valor estratégico.
+O feed deve ter aparência editorial premium e consistência visual suficiente para ser reconhecido sem depender do logo em excesso.
 
-## Conteúdo
+## Idioma
 
-O conteúdo deve gerar confiança técnica e comercial. Priorizar:
-- ingredient education
-- sourcing transparency
-- applications
-- origin stories
-- quality/documentation
-- B2B supply capabilities
-- product spotlights
+Inglês como padrão.
 
-Evitar conteúdo genérico de “health influencer” que enfraqueça o posicionamento B2B.
+## CTA
+
+Priorizar CTAs discretos:
+- Discover our ingredients
+- Request specifications
+- Ask about wholesale availability
+- Talk to Biohacker Foods
