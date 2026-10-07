@@ -60,14 +60,50 @@ Before any meaningful task, the AI should read:
 
 Then execute the task and capture durable improvements back into the appropriate workspace file.
 
-## Initial skills
+## Skills
 
-- `biohacker-weekly-content`
-- `qualificar-lead`
-- `rfq-fornecedor`
-- `comparar-fornecedores`
-- `responder-lead`
-- `pricing`
-- `sample-workflow`
+Core:
+- `/abrir`
+- `/salvar`
+- `/atualizar`
+- `/mapear-rotinas`
+
+Biohacker-specific:
+- `/qualificar-lead`
+- `/rfq-fornecedor`
+- `/comparar-fornecedores`
+- `/responder-lead`
+- `/pricing`
+- `/sample-workflow`
+- `/biohacker-weekly-content`
+
+Marketing / MazyOS:
+- `/carrossel`
+- `/publicar-tema`
+- `/agendar-buffer`
+- `/aprovar-post`
+- `/seo`
+- `/anuncio-google`
+- `/relatorio-ads`
+- `/analisar-dados`
+- `/email-profissional`
+- `/novo-projeto`
+
+## Weekly content pipeline
+
+The repository includes the adapted Node/Playwright pipeline:
+
+```bash
+npm install
+npx playwright install chromium
+
+npm run weekly:validate -- --input planejamento/semana-YYYY-MM-DD.json
+npm run weekly:render -- --input planejamento/semana-YYYY-MM-DD.json
+npm run weekly:schedule -- --input planejamento/semana-YYYY-MM-DD.json
+npm run weekly:archive -- --input planejamento/semana-YYYY-MM-DD.json
+npm run buffer:discover
+```
+
+Before enabling publishing, add the approved Biohacker logo to `identidade/assets/logo-biohacker-foods.png` and configure the private `.env` locally.
 
 The repository is intentionally modular: new routines should become skills when they are repeated often enough to deserve a documented workflow.
