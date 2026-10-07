@@ -124,17 +124,14 @@ function validatePlan(plan) {
 }
 
 function carouselHtml(item, backgroundDir = null) {
-  const variableFont = path.join(ROOT, 'identidade', 'assets', 'Montserrat-Variable.ttf');
-  const fontFaces = fs.existsSync(variableFont)
-    ? `@font-face{font-family:Montserrat;src:url('${pathToFileURL(variableFont).href}') format('truetype');font-weight:100 900;font-style:normal}`
-    : '';
+  const fontFaces = '';
   const subject = `${item.category || ''} ${item.theme || ''}`.toLowerCase();
   const disclaimer = item.disclaimer || (
-    subject.includes('consórc') || subject.includes('contemplad')
-      ? 'Contemplação por sorteio ou lance, sem garantia de data. Condições conforme contrato.'
-      : subject.includes('crédito')
-        ? 'Crédito sujeito à análise e à aprovação da instituição credora.'
-        : 'Conteúdo educativo. A estratégia adequada depende de análise individual.'
+    subject.includes('organic') || subject.includes('certif')
+      ? 'Certification status must be verified against current supplier documentation.'
+      : subject.includes('health') || subject.includes('nutrition') || subject.includes('functional')
+        ? 'B2B ingredient information only. Final formulation and claims require technical and regulatory review.'
+        : 'B2B ingredient information. Specifications, origin and availability are subject to confirmation.'
   );
   const slides = item.slides.map((slide, index) => {
     const number = String(index + 1).padStart(2, '0');
@@ -166,7 +163,7 @@ function carouselHtml(item, backgroundDir = null) {
           <div class="footer-main">
             <div class="wordmark"><span class="borelli">BIOHACKER</span><span class="capital">FOODS</span></div>
             <div class="footer-divider"></div>
-            <div class="footer-cta">${isFinal ? 'Talk to Biohacker Foods' : 'Continue a leitura'}</div>
+            <div class="footer-cta">${isFinal ? 'Talk to Biohacker Foods' : 'Continue reading'}</div>
             <div class="arrow">↓</div>
           </div>
           <div class="disclaimer">${escapeHtml(disclaimer)}</div>
@@ -175,35 +172,35 @@ function carouselHtml(item, backgroundDir = null) {
   }).join('\n');
 
   return `<!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
   ${fontFaces}
   *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:#817A70;font-family:Montserrat,Arial,sans-serif}
-  .slide{width:1080px;height:1350px;background:#F4F0E8;color:#061B2B;overflow:hidden;position:relative}
-  .photo{position:absolute;z-index:1;left:354px;right:0;top:334px;bottom:220px;background-color:#D8D0C3;background-size:cover;background-position:center}
-  .photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(244,240,232,.18),transparent 28%)}
+  html,body{margin:0;padding:0;background:#8E8579;font-family:'Avenir Next',Avenir,Arial,sans-serif}
+  .slide{width:1080px;height:1350px;background:#F7F2E8;color:#2E1828;overflow:hidden;position:relative}
+  .photo{position:absolute;z-index:1;left:354px;right:0;top:334px;bottom:220px;background-color:#DDD3C4;background-size:cover;background-position:center}
+  .photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(247,242,232,.18),transparent 28%)}
   main{position:absolute;z-index:3;inset:54px 54px 220px}
-  .kicker{font-size:18px;font-weight:590;letter-spacing:.28em;text-transform:uppercase;color:#B79A61;margin:0 0 24px;font-variation-settings:"wght" 590}
+  .kicker{font-size:18px;font-weight:590;letter-spacing:.28em;text-transform:uppercase;color:#B4934E;margin:0 0 24px;font-variation-settings:"wght" 590}
   h1{font-size:88px;line-height:.95;letter-spacing:-.052em;margin:0;max-width:940px;font-weight:820;font-variation-settings:"wght" 820}
   h1.title-medium{font-size:78px;line-height:.97;max-width:930px}
   h1.title-compact{font-size:68px;line-height:1;max-width:940px}
-  .body-panel{position:absolute;left:0;top:465px;width:338px;min-height:340px;background:#F4F0E8;padding:0 32px 28px 0}
-  .rule{width:74px;height:4px;background:#B79A61;margin:0 0 28px}
-  p{font-size:29px;font-weight:430;line-height:1.31;margin:0;color:#10263A;font-variation-settings:"wght" 430}
-  .emphasis{margin-top:24px;font-size:19px;font-weight:600;line-height:1.3;color:#B79A61}
-  .counter{position:absolute;right:38px;top:292px;z-index:4;font-size:14px;font-weight:600;letter-spacing:.16em;color:#F7F3EA;text-shadow:0 1px 8px rgba(6,27,43,.6)}
+  .body-panel{position:absolute;left:0;top:465px;width:338px;min-height:340px;background:#F7F2E8;padding:0 32px 28px 0}
+  .rule{width:74px;height:4px;background:#B4934E;margin:0 0 28px}
+  p{font-size:29px;font-weight:430;line-height:1.31;margin:0;color:#3A102C;font-variation-settings:"wght" 430}
+  .emphasis{margin-top:24px;font-size:19px;font-weight:600;line-height:1.3;color:#B4934E}
+  .counter{position:absolute;right:38px;top:292px;z-index:4;font-size:14px;font-weight:600;letter-spacing:.16em;color:#F7F3EA;text-shadow:0 1px 8px rgba(58,16,44,.6)}
   .layout-1 .photo{left:390px;background-position:58% center}
   .layout-2 .photo{left:330px;background-position:62% center}
   .layout-2 .body-panel{width:315px}
-  .brand-footer{position:absolute;z-index:5;left:0;right:0;bottom:0;height:220px;background:#061B2B;color:#F7F3EA;padding:32px 54px 20px}
+  .brand-footer{position:absolute;z-index:5;left:0;right:0;bottom:0;height:220px;background:#3A102C;color:#F7F3EA;padding:32px 54px 20px}
   .footer-main{height:118px;display:flex;align-items:center}
-  .wordmark{width:430px;color:#D9BC79;display:flex;flex-direction:column;align-items:flex-start;line-height:1}
+  .wordmark{width:430px;color:#C3A45D;display:flex;flex-direction:column;align-items:flex-start;line-height:1}
   .borelli{font-family:Georgia,'Times New Roman',serif;font-size:58px;letter-spacing:.12em}
   .capital{font-size:18px;font-weight:500;letter-spacing:.44em;margin:14px 0 0 83px}
-  .footer-divider{height:64px;width:1px;background:#B79A61;margin:0 46px 0 18px;opacity:.8}
+  .footer-divider{height:64px;width:1px;background:#B4934E;margin:0 46px 0 18px;opacity:.8}
   .footer-cta{font-size:25px;font-weight:750;white-space:nowrap;letter-spacing:-.02em}
-  .arrow{margin-left:auto;width:66px;height:66px;border:2px solid #D9BC79;border-radius:50%;color:#D9BC79;display:flex;align-items:center;justify-content:center;font-size:43px;font-weight:300;line-height:1;padding-bottom:8px}
+  .arrow{margin-left:auto;width:66px;height:66px;border:2px solid #C3A45D;border-radius:50%;color:#C3A45D;display:flex;align-items:center;justify-content:center;font-size:43px;font-weight:300;line-height:1;padding-bottom:8px}
   .disclaimer{position:absolute;left:54px;right:54px;bottom:18px;font-size:13px;line-height:1.25;font-weight:380;color:#F7F3EA;opacity:.92}
   .final h1{max-width:900px}
   .final .photo{background-position:center}
