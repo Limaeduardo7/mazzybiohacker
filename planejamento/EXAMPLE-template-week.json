@@ -1,0 +1,222 @@
+{
+  "weekStart": "2026-10-12",
+  "carousels": [
+    {
+      "slug": "acai-powder",
+      "category": "Ingredient Spotlight",
+      "theme": "Açaí Powder",
+      "templateId": "T01",
+      "hook": "A Brazilian superfruit built for modern formulations.",
+      "caption": "Example caption placeholder long enough for validation. Replace with the final approved English caption before scheduling. This file documents template selection and structure only.",
+      "cta": "Request specifications",
+      "slides": [
+        {
+          "title": "Açaí Powder",
+          "body": "Freeze-dried Brazilian superfruit."
+        },
+        {
+          "title": "Color that stands out",
+          "body": "Use one focused insight per slide."
+        },
+        {
+          "title": "Texture matters",
+          "body": "Keep copy short and visual."
+        },
+        {
+          "title": "Applications",
+          "body": "Connect ingredient to finished products."
+        },
+        {
+          "title": "Talk to Biohacker Foods",
+          "body": "Request specifications."
+        }
+      ]
+    },
+    {
+      "slug": "freeze-vs-spray",
+      "category": "Education",
+      "theme": "Freeze-Dried vs Spray-Dried",
+      "templateId": "T02",
+      "hook": "Different processes create different ingredient behavior.",
+      "caption": "Example caption placeholder long enough for validation. Replace with verified technical copy before publishing any comparison or process claim.",
+      "cta": "Request specifications",
+      "slides": [
+        {
+          "title": "Freeze-Dried vs Spray-Dried",
+          "body": "Two processes. Different use cases."
+        },
+        {
+          "title": "Texture",
+          "body": "Compare only supported attributes."
+        },
+        {
+          "title": "Flavor",
+          "body": "Avoid absolute claims without evidence."
+        },
+        {
+          "title": "Applications",
+          "body": "Match format to formulation needs."
+        },
+        {
+          "title": "Need the right format?",
+          "body": "Request specifications."
+        }
+      ]
+    },
+    {
+      "slug": "smoothie-applications",
+      "category": "Applications",
+      "theme": "Superfoods in Smoothies",
+      "templateId": "T03",
+      "hook": "Show the ingredient where customers actually use it.",
+      "caption": "Example caption placeholder long enough for validation. Replace with the final application-led caption and verified product details before scheduling.",
+      "cta": "Discuss your formulation",
+      "slides": [
+        {
+          "title": "Superfoods in Smoothies",
+          "body": "Application-led inspiration."
+        },
+        {
+          "title": "Beverages",
+          "body": "Show a credible use case."
+        },
+        {
+          "title": "Bowls",
+          "body": "Connect raw ingredient to final product."
+        },
+        {
+          "title": "Functional blends",
+          "body": "Keep the styling premium and realistic."
+        },
+        {
+          "title": "Discuss your formulation",
+          "body": "Talk to Biohacker Foods."
+        }
+      ]
+    },
+    {
+      "slug": "brazil-origin",
+      "category": "Origin & Sourcing",
+      "theme": "From Brazil to the World",
+      "templateId": "T04",
+      "hook": "Origin is part of the ingredient story.",
+      "caption": "Example caption placeholder long enough for validation. Replace with factual sourcing and origin copy before publishing. Do not imply undocumented farm-level traceability.",
+      "cta": "Discover our sourcing",
+      "slides": [
+        {
+          "title": "From Brazil to the World",
+          "body": "Premium fruit ingredients with global potential."
+        },
+        {
+          "title": "Origin",
+          "body": "Use factual provenance."
+        },
+        {
+          "title": "Quality",
+          "body": "Support claims with evidence."
+        },
+        {
+          "title": "Supply",
+          "body": "Keep logistics language precise."
+        },
+        {
+          "title": "Discover our sourcing",
+          "body": "Talk to Biohacker Foods."
+        }
+      ]
+    },
+    {
+      "slug": "acerola-spotlight",
+      "category": "Ingredient Spotlight",
+      "theme": "Acerola Powder",
+      "templateId": "T01",
+      "hook": "A tropical ingredient with strong formulation potential.",
+      "caption": "Example caption placeholder long enough for validation. Replace with approved product-specific copy and confirmed specifications before scheduling the post.",
+      "cta": "Request specifications",
+      "slides": [
+        {
+          "title": "Acerola Powder",
+          "body": "Ingredient spotlight."
+        },
+        {
+          "title": "Product format",
+          "body": "Use confirmed technical information."
+        },
+        {
+          "title": "Applications",
+          "body": "Show credible formulation uses."
+        },
+        {
+          "title": "Specifications",
+          "body": "Invite technical follow-up."
+        },
+        {
+          "title": "Request specifications",
+          "body": "Talk to Biohacker Foods."
+        }
+      ]
+    },
+    {
+      "slug": "private-label",
+      "category": "Private Label",
+      "theme": "Private Label Ready",
+      "templateId": "T05",
+      "hook": "Turn premium ingredients into a brand-ready product concept.",
+      "caption": "Example caption placeholder long enough for validation. Packaging shown in template visuals is conceptual until final regulatory and brand approval.",
+      "cta": "Ask about private label",
+      "slides": [
+        {
+          "title": "Private Label Ready",
+          "body": "Premium superfoods. Your brand."
+        },
+        {
+          "title": "Formats",
+          "body": "Show approved packaging options."
+        },
+        {
+          "title": "Branding",
+          "body": "Keep mockups clearly conceptual."
+        },
+        {
+          "title": "Supply",
+          "body": "Use confirmed commercial capability."
+        },
+        {
+          "title": "Ask about private label",
+          "body": "Talk to Biohacker Foods."
+        }
+      ]
+    },
+    {
+      "slug": "brand-message",
+      "category": "Brand",
+      "theme": "Premium Brazilian Superfoods",
+      "templateId": "T06",
+      "hook": "Ingredient solutions for modern food and wellness brands.",
+      "caption": "Example caption placeholder long enough for validation. Use this family for positioning, announcements, campaign closers and direct Biohacker Foods calls to action.",
+      "cta": "Talk to Biohacker Foods",
+      "slides": [
+        {
+          "title": "Premium Brazilian Superfoods",
+          "body": "Ingredient solutions for modern brands."
+        },
+        {
+          "title": "Natural",
+          "body": "Keep the message brand-led."
+        },
+        {
+          "title": "Focused",
+          "body": "One value per slide."
+        },
+        {
+          "title": "Global",
+          "body": "Use precise international positioning."
+        },
+        {
+          "title": "Talk to Biohacker Foods",
+          "body": "Start a conversation."
+        }
+      ]
+    }
+  ]
+}
