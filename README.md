@@ -34,6 +34,19 @@ Sistema focado exclusivamente na operação de Instagram da Biohacker Foods.
 - `/salvar`
 - `/atualizar`
 
+## Sistema de templates
+
+O feed usa seis famílias visuais canônicas registradas em `marketing/templates/`:
+
+- T01 — Ingredient Spotlight
+- T02 — Educational Comparison
+- T03 — Application Spotlight
+- T04 — Origin & Sourcing
+- T05 — Private Label
+- T06 — Brand Message
+
+Cada item novo do planejamento deve declarar `templateId`. O renderer também consegue inferir a família quando necessário, mas seleção explícita é o padrão.
+
 ## Pipeline semanal
 
 ```bash
