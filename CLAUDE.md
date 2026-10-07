@@ -1,80 +1,72 @@
-# Biohacker Foods — Operating Instructions
+# Biohacker Foods — Instagram OS
 
-> AI workspace for Biohacker Foods.
+Este workspace existe apenas para criar, renderizar, revisar e publicar conteúdo de Instagram da Biohacker Foods.
 
-## Mission
+## Antes de qualquer tarefa
 
-Biohacker Foods connects qualified buyers with premium Brazilian and Latin American fruit ingredients and superfoods, with emphasis on B2B supply, export, private label and technically documented sourcing.
-
-The AI should operate as an execution layer for commercial, sourcing, product, documentation and marketing workflows — not as a generic chatbot.
-
-## Required context before work
-
-Before any meaningful task, read:
-
+Ler:
 1. `_memoria/empresa.md`
-2. `_memoria/preferencias.md`
-3. `_memoria/estrategia.md`
-4. `_memoria/source-of-truth.md`
-5. the relevant domain README
-6. `identidade/design-guide.md` for visual or public-facing content
+2. `_memoria/estrategia.md`
+3. `_memoria/preferencias.md`
+4. `identidade/design-guide.md`
+5. a skill relevante em `.claude/skills/`
 
-## Operating principles
+## Escopo
 
-- Prefer documented evidence over assumptions.
-- Distinguish facts, estimates and hypotheses.
-- Never expose supplier cost as customer pricing.
-- Never invent certifications, capacity, MOQ, stock, origin, lead time or logistics terms.
-- Treat active operational systems as more current than repository snapshots.
-- Keep customer-facing communication concise, natural and commercially useful.
-- Position Biohacker as a supply-chain partner, not as a generic SDR or commodity broker.
-- When a process repeats, convert it into a reusable skill.
+Fazer:
+- planejamento editorial
+- carrosséis
+- legendas
+- peças de feed
+- conteúdo semanal
+- renderização 1080×1350
+- agendamento via Buffer
+- organização e versionamento dos lotes
 
-## Source of truth
+Não fazer neste repositório:
+- CRM
+- gestão de leads
+- fornecedores
+- pricing comercial
+- RFQs
+- documentos técnicos
+- operação de vendas
 
-- Notion: canonical operating context, approvals and structured commercial/supplier records when available.
-- Drive: canonical location for technical documents and shared files when available.
-- Email / messaging systems: canonical source for the latest external communication.
-- GitHub: versioned AI workspace, skills, rules, templates and public-safe context.
+## Posicionamento
 
-If sources conflict, prioritize the newest authoritative operational source and explicitly flag the conflict.
+Biohacker Foods deve parecer uma marca premium, internacional e especializada em superfoods e ingredientes de frutas.
 
-## Sensitive information
+O conteúdo pode abordar:
+- açaí
+- acerola
+- pitaya
+- berries
+- frutas tropicais
+- freeze-dried ingredients
+- product education
+- applications
+- origin
+- quality
+- sourcing
+- brand storytelling
 
-This repository is public. Do not commit:
-- supplier quotations or confidential pricing
-- customer personal data
-- private deal notes
-- internal margin matrices
-- API keys or tokens
-- contracts or restricted documentation
+## Regras editoriais
 
-Keep sensitive data in approved private systems and reference it at execution time.
+- Inglês como idioma padrão.
+- Visual sofisticado, natural e editorial.
+- Pouco texto por slide.
+- CTA discreto.
+- Não inventar certificações, composição, origem ou propriedades.
+- Não fazer claims médicos.
+- Evitar estética de academia, cápsulas genéricas ou marketing agressivo.
+- Não repetir hook/tema recente sem motivo.
 
-## Domain folders
+## Publicação
 
-- `commercial/`: lead qualification, follow-up, samples, account progression
-- `suppliers/`: sourcing, qualification, RFQs, supplier comparisons
-- `products/`: product taxonomy and specification logic
-- `documents/`: technical/compliance document requirements
-- `pricing/`: pricing governance
-- `marketing/`: content and brand acquisition
-- `saidas/`: generated deliverables safe to version
+Só afirmar que algo foi agendado quando houver ID real retornado pelo Buffer.
 
-## Communication style
+Se Buffer estiver indisponível, gerar e renderizar normalmente, mas reportar o bloqueio sem simular publicação.
 
-Public English: professional, international, direct and premium.
+## Segurança
 
-Commercial messages should:
-- identify the buyer's actual need
-- clarify product, volume, destination and required certifications
-- avoid long lists unless technically necessary
-- move the conversation toward the next concrete action
-
-## Completion standard
-
-A task is not complete because text was generated. It is complete when the requested output is:
-- grounded in current context
-- consistent with operating rules
-- saved or routed correctly when applicable
-- explicit about unresolved blockers
+Nunca versionar tokens, chaves ou `.env`.
